@@ -1,0 +1,3 @@
+<div id="viewlet-download_track" i18n:domain="collective.downloadtracker" tal:condition="view/has_download_records">
+    <div class="documentByLine" i18n:translate="download_track">This file was downloaded <span tal:replace="view/download_records" /> times.</div>
+</div>

@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.downloadtracker">
+
+    <!-- TODO: only register this viewlet for File -->
+
+    <browser:viewlet
+        name="collective.download_records"
+        context="Products.ATContentTypes.interface.IATFile"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        class=".viewlets.DownloadRecordsViewlet"
+        permission="cmf.ModifyPortalContent"
+        layer="collective.downloadtracker.interfaces.IDownloadtrackerInstalled"
+        />
+
+    <browser:page
+        for="Products.ATContentTypes.interface.IATFile"
+        name="delete"
+        permission="cmf.ManagePortal"
+        class=".delete.DeleteDownloadRecord"
+        layer="collective.downloadtracker.interfaces.IDownloadtrackerInstalled"
+        />
+
+    <browser:resource 
+       name="collective.downloadtracker.jquery.downloadtracker.js" 
+       file="dt.js" 
+       />
+
+</configure>
