@@ -1,0 +1,14 @@
+Changelog
+=========
+
+
+1.0a2 - 2012-1-11
+-----------------
+
+* Added CHANGES.txt.
+  [pabo3000]
+
+1.0a1 - 2012-1-11
+-----------------
+
+* First public release.
