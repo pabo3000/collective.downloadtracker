@@ -12,8 +12,7 @@ jq(document).ready(function(){
 				date: date
 			},
 			function(data) {
-				// lösche Zeile aus dom im Erfolgsfall
-				console.log(data);
+				// im Erfolgsfall Seite neuladen
 				if (data==true) {
 					location.reload();
 				}

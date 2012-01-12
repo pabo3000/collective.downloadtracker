@@ -19,7 +19,7 @@ class DeleteDownloadRecord(BrowserView):
         try:
             i = download_records.index(record)
         except ValueError:
-            return 'false'
+            return
         del download_records[i]
         field.set(self.context, download_records)
-        return 'true'
+        return json.dumps(True)
