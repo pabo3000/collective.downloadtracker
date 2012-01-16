@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Extend default Plone content types."""
+import json
+
 from AccessControl import ClassSecurityInfo
 
 from zope.component import adapts
@@ -31,7 +33,7 @@ class _MyLinesField(ExtensionField, LinesField):
         The format of such a string is: "name: date".
         """
         if isinstance(value, list):
-            value = ['%s: %s' % (k, v) for k, v in value]
+            value = [json.dumps((k, v)) for k, v in value]
         super(_MyLinesField, self).set(instance, value, **kwargs)
 
     security.declarePrivate('get')
@@ -44,7 +46,7 @@ class _MyLinesField(ExtensionField, LinesField):
         adict = {}
         for record in data:
             try:
-                value, key = record.split(': ', 1)
+                value, key = json.loads(record)
             except ValueError:
                 key = record
                 value = None

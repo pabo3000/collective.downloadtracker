@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Initializer."""
-
+import json
 import AccessControl
 from DateTime import DateTime
 from zope.app.component.hooks import getSite
@@ -28,7 +28,7 @@ def add_download_record(file):
         download_records = list(file.download_records)
         # logged-in member
         username = getActiveUserName()
-        download_records.append("%s: %s" % (username, DateTime()))
+        download_records.append(json.dumps((username, DateTime().strftime("%d.%m.%Y %H:%M"))))
         file.download_records = download_records
 
 def initialize(context):
