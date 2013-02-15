@@ -2,6 +2,8 @@
 collective.downloadtracker
 ==========================
 
+.. image:: https://travis-ci.org/pabo3000/collective.downloadtracker.png?branch=master
+
 A Plone add-on that tracks which registered user has downloaded a file
 (ATFile) at which time. It displays this value in a viewlet below File's title.
 Administrators are able to delete tracked records.
