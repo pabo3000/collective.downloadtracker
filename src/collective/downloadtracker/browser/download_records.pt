@@ -21,7 +21,7 @@
                     <td tal:content="user">psff</td>
                     <td tal:content="time">06.07.12</td>
                     <td tal:condition="view/can_manage">
-                        <a href="">x</a>
+                        <a href="#">x</a>
                     </td>
                 </tr>
             </tal:block>
