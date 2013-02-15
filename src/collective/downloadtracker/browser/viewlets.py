@@ -20,7 +20,6 @@ class DownloadRecordsViewlet(ViewletBase):
         """Checks if this File has a download_records field."""
         return hasattr(self.context, 'download_records')
 
-    @memoize
     def download_records(self):
         return self.context.getField('download_records').get(self.context)
 

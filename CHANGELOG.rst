@@ -2,7 +2,14 @@ Changelog
 =========
 
 
-1.0a2 - 2012-1-16
+1.0a4 - 2013-2-15
+-----------------
+
+* switch to github
+* added a buildout
+  [pabo3000]
+
+1.0a3 - 2012-1-16
 -----------------
 
 * download_record to string conversion is now done by json.

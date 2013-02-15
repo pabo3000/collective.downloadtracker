@@ -1,9 +1,14 @@
-<div id="viewlet-download_track" i18n:domain="collective.downloadtracker" tal:condition="view/has_download_records">
-    <div class="documentByLine" i18n:translate="download_track"
+<div id="viewlet-download_track"
+     i18n:domain="collective.downloadtracker"
+     tal:condition="view/has_download_records">
+    <div class="documentByLine"
+         i18n:translate="download_track"
          tal:define="records view/download_records">
-        This file was downloaded 
-        <span tal:content="python: len(records)" /> times.
-        <table class="listing" summary="User with Downloads">
+        This file was downloaded
+        <span tal:content="python: len(records)" />
+        times.
+        <table class="listing"
+               summary="User with Downloads">
             <tr class="odd">
                 <th>Username</th>
                 <th>Date</th>
@@ -15,7 +20,9 @@
                                 time python:download[1];">
                     <td tal:content="user">psff</td>
                     <td tal:content="time">06.07.12</td>
-                    <td tal:condition="view/can_manage"><a href="">x</a></td>
+                    <td tal:condition="view/can_manage">
+                        <a href="">x</a>
+                    </td>
                 </tr>
             </tal:block>
         </table>

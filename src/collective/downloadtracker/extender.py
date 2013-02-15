@@ -10,21 +10,25 @@ from zope.interface import implements
 from Products.Archetypes.public import LinesWidget, LinesField
 from Products.Archetypes.Field import ObjectField, encode
 from Products.ATContentTypes.interface import IATFile
+from Products.CMFCore.permissions import ReviewPortalContent
 
-from archetypes.schemaextender.interfaces import ISchemaExtender, IBrowserLayerAwareExtender
+from archetypes.schemaextender.interfaces import ISchemaExtender,\
+    IBrowserLayerAwareExtender
 from archetypes.schemaextender.field import ExtensionField
 
 from interfaces import IDownloadtrackerInstalled
+
 
 def sortedDictValues(adict):
     items = adict.items()
     items.sort()
     return [(value, key) for key, value in items]
 
+
 class _MyLinesField(ExtensionField, LinesField):
     """A simple lines field."""
 
-    security  = ClassSecurityInfo()
+    security = ClassSecurityInfo()
 
     security.declarePrivate('set')
     def set(self, instance, value, **kwargs):
@@ -53,6 +57,7 @@ class _MyLinesField(ExtensionField, LinesField):
             adict[key] = value
         return sortedDictValues(adict)
 
+
 class FileExtender(object):
     """Extends default File content type."""
     adapts(IATFile)
@@ -62,14 +67,15 @@ class FileExtender(object):
     fields = [
         _MyLinesField(
             "download_records",
-            widget = LinesWidget(
+            widget=LinesWidget(
                 label=u"Download Records",
-                description=u"When was this file downloaded from whom", 
-                modes=('view', )
-                ),
-            default=[],
+                description=u"When was this file downloaded from whom",
+                modes=('view', ),
+                read_permission=ReviewPortalContent,
             ),
-            ]
+            default=[],
+        ),
+    ]
 
     def __init__(self, context):
         self.context = context

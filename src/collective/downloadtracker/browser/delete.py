@@ -2,6 +2,7 @@ import json
 
 from Products.Five.browser import BrowserView
 
+
 class DeleteDownloadRecord(BrowserView):
 
     # by default call will call self.index() method which is mapped
