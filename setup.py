@@ -42,6 +42,7 @@ setup(
         'Plone',
         'archetypes.schemaextender',
         'collective.monkeypatcher',
+        'plone.api',
     ],
     extras_require={
         'test': [

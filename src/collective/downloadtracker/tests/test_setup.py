@@ -25,6 +25,6 @@ class TestInstall(IntegrationTestCase):
     # browserlayer.xml
     def test_browserlayer(self):
         """Test that ICollectiveDownloadtrackerLayer is registered."""
-        from collective.downloadtracker.interfaces import ICollectiveDownloadtrackerLayer
+        from collective.downloadtracker.interfaces import IDownloadtrackerInstalled
         from plone.browserlayer import utils
-        self.failUnless(ICollectiveDownloadtrackerLayer in utils.registered_layers())
+        self.failUnless(IDownloadtrackerInstalled in utils.registered_layers())
