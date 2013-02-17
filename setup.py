@@ -17,7 +17,7 @@ long_description = \
 
 setup(
     name='collective.downloadtracker',
-    version='1.0a4',
+    version='1.0b1',
     description=u"It tracks which registered user has downloaded a file"
                     u" (ATFile) at which time. It displays this value in a"
                     u"viewlet below File's title. Administrators are able to "
