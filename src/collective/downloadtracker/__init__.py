@@ -4,7 +4,7 @@
 import json
 import AccessControl
 from DateTime import DateTime
-from zope.app.component.hooks import getSite
+from zope.component.hooks import getSite
 from Products.CMFCore.utils import getToolByName
 from zope.i18nmessageid import MessageFactory
 
