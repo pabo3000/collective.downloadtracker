@@ -29,8 +29,8 @@
     <monkey:patch
         description="this adds the Adder to download of files"
         class="plone.app.blob.field.BlobField"
-        original="download"
-        replacement=".download_patch.download"
+        original="index_html"
+        replacement=".download_patch.index_html"
         />
 
     <!-- Register the installation GenericSetup extension profile -->

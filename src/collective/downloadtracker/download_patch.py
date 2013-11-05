@@ -5,11 +5,13 @@ from collective.downloadtracker import add_download_record
 security = ClassSecurityInfo()
 
 
-security.declareProtected(View, 'download')
-def download(self, instance, REQUEST=None, RESPONSE=None):
-    """ download the file (use default index_html) """
+security.declareProtected(View, 'index_html')
+def index_html(self, instance, REQUEST=None, RESPONSE=None, **kwargs):
+    """ make it directly viewable when entering the objects URL """
+    blob = self.get(instance, raw=True)    # TODO: why 'raw'?
+    charset = instance.getCharset()
     add_download_record(instance)
-    return self.index_html(instance,
-                           REQUEST,
-                           RESPONSE,
-                           disposition='attachment')
+    return blob.index_html(
+        REQUEST=REQUEST, RESPONSE=RESPONSE,
+        charset=charset, **kwargs
+        )
