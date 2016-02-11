@@ -22,9 +22,9 @@
         layer="collective.downloadtracker.interfaces.IDownloadtrackerInstalled"
         />
 
-    <browser:resource 
-       name="collective.downloadtracker.jquery.downloadtracker.js" 
-       file="dt.js" 
+    <browser:resource
+       name="collective.downloadtracker.js" 
+       file="dt.js"
        />
 
 </configure>

@@ -25,8 +25,8 @@
 -->
 
   <javascript
-    id="++resource++collective.downloadtracker.jquery.downloadtracker.js"
+    id="++resource++collective.downloadtracker.js"
     cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression=""  inline="False"/>    
+    enabled="True" expression=""  inline="False"/>
 
 </object>
