@@ -40,6 +40,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'Plone',
+        'setuptools',
         'archetypes.schemaextender',
         'collective.monkeypatcher',
         'plone.api',
